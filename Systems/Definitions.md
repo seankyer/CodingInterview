@@ -4,12 +4,23 @@
 ## Generic Terms
 ### Embedded C Programming
 <p style="color: rgb(80, 130, 200);">
-Embedded C programming is the process of writing C code for an embedded electronic (obviously). It differs from traditional C, for say a general purpose computer in a few ways.
+Embedded C programming is the process of writing C code for an embedded electronic (obviously). In general, the languages are the same, however the usage differs from traditional C. Specific toolchains and interactions may differ.
 </p>  
 
-1. <>
+1. <p style="color: rgb(80, 130, 200);">Embedded C will interact directly with hardware components such as sensors, peripherals or GPIO.</p>
+2. <p style="color: rgb(80, 130, 200);">Sometimes in an embedded system (microcontroller for example) you don't have an OS, so certain OS library functions wont wont like malloc() for example.</p>
+3. <p style="color: rgb(80, 130, 200);">The compiler used may differ from your typical gcc. Depending on your platform, the vendor may supply a compiler to you or you will have to consider the architecture of the target CPU.</p>
 
 ### Embedded System
+<p style="color: rgb(80, 130, 200);">
+An embedded system is essentially a computer that is designed for some specific task in mind. It may be a part of a larger electronic device and will tailor its needs specifically. It differs from a general purpose computer in that the system will be min-maxed to suit the needs of the greater electronic system or product goal. That means it may be missing subsystems like RAM or a UI if it's not required for the task. 
+</p>
+
+<p style="color: rgb(80, 130, 200);">
+'Embedded Systems' is a broad term and the specifics usually come down to the task at hand. But in general, I'd describe it as dealing with low-level programming for an electronic system.
+</p>
+
+### Firmware
 <p style="color: rgb(80, 130, 200);">
 TODO
 </p>
@@ -25,11 +36,6 @@ TODO
 </p>
 
 ### SoC
-<p style="color: rgb(80, 130, 200);">
-TODO
-</p>
-
-### Firmware
 <p style="color: rgb(80, 130, 200);">
 TODO
 </p>
