@@ -4,6 +4,8 @@ My prep material and practice questions for an embedded or low-level systems tec
 
 This repository will contain notes on embedded-systems related topics, definitions, as well as some coding problems involving low-level data structures, with a slight touch on dynamic programming (just in case).
 
+(I recommend you clone and view this repository in an IDE that will render HTML in markdown files)
+
 ## Target Job Description
 
 (Culmunation of desired qualifications from Apple, Tesla, Amazon and Meta)  
