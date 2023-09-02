@@ -1,7 +1,7 @@
 # Example Technical Questions and Things to Know
-<p style="color: rgb(80, 130, 200);">Answers written in blue</answer>
+<p style="color: rgb(80, 130, 200);">Answers written in blue</p>
 
-<p style="color: rgb(80, 130, 200);">TODO</answer>
+<p style="color: rgb(80, 130, 200);">TODO</p>
 
 ## What is the Volatile keyword in C?
 ### Differences between Const and Volatile?
