@@ -22,48 +22,53 @@ An embedded system is essentially a computer that is designed for some specific 
 
 ### Firmware
 <p style="color: rgb(80, 130, 200);">
-TODO
+Type of software for lowlevel control over a system. Typically the firmware, unlike software, is permament to the system once deployed and may reside in some read-only memory. Usually used to refer to the control software of an embedded deveice which may also control some hardware compoenents (servos, shutters, peripherals).
 </p>
 
 ### Microcontroller
 <p style="color: rgb(80, 130, 200);">
-TODO
+A microcontroller is a type of integrated circuit that would combine a processor, some memory and GPIO. It is lighter weight than an SoC. It has no memory management unit and is typically used for low-level tasks such as controlling some hardware or performing a subroutine.
 </p>
 
 ### Microprocessor
 <p style="color: rgb(80, 130, 200);">
-TODO
+A microprocessor is the CPU (central processing unit) of a computer or device. is a type of integrated circuit that would contain all of the components to be the central processing unit of a computer. A microprocessor may have multiple processing cores on it, allowing for mutli-core execution of a program.
 </p>
 
 ### SoC
 <p style="color: rgb(80, 130, 200);">
-TODO
+An SoC, or 'System on Chip' is a type of integrated circuit that combines all the periphals and hardware needed to be a fully functional computer. It would contain a processor, RAM, MMU, some ROM potentially, GPIO, etc. The SoC, having an MMU is capable of running an operating system and supporting multi-processing. The SoC is essentially the entire conventional computer rolled into a single chip.
 </p>
 
 ### RTOS
 <p style="color: rgb(80, 130, 200);">
-TODO
+An RTOS (real-time operating system) is a type of operating system that can operate in 'real-time'. Meaning that when a task is running on a given core, it cannot be interrupted or stopped by any abstraction layers in a typical operating system. In a conventional operating system, the OS would share CPU resources with different processing, and if done correctly, provides the user with a seamless experience as if each process has total computing power. However, in an embedded system, where precise timing may be critical (monitoring a sensor for example), there can be no gaps in processing time for certain processes. But if the engineer still wants the benefits of an OS (networking abstractions, multi-threading, IPC, etc) then an RTOS may be appropriate over a dedicated microcontroller.
 </p>
 
 ### RTOS Scheduler
 <p style="color: rgb(80, 130, 200);">
-TODO
+The RTOS scheduler is what determines which tasks get hold of which processing cores. There are many different implementation of the RTOS scheduler. Typically, a process may be given a priority level and depending on the OS configuration, when a process of high priority is set to run, it will have uninterrupted access to the CPU core.
 </p>
 
 ### Cross Compilation
 <p style="color: rgb(80, 130, 200);">
-TODO
+Cross compiling is where you program the code for a device using a separate device which's CPU architecture may differ. When you cross-compile the code, it would not run on your host system and would instead need to be transported to the target device before it could be executed. It depends on which compiler you use at build-time. It also required cross-compiling any libraries you used when writing the code. Everything needs to be compatible with the architecture of your target CPU.
 </p>
 
 ### Hardware Abstraction Layer (HAL)
 <p style="color: rgb(80, 130, 200);">
-TODO
+The hardware abstaction layer is as it sounds. It allows a program or OS to interact with the hardware of the baremetal in an abstracted way. For example, you may be able to 'turn off/on' a periphals such as an LED using some function. What is not known to the host program is how the driver of the LED is written and in what manner it is communicated to the LED that it must change its state. This concept can be extended to any piece of hardware that could be interacted with. Providing a HAL allows for more general software writing and then the hardware interface can be swapped interchangably (given it has the same features and drivers written).
 </p>
 
 ### ELF
 <p style="color: rgb(80, 130, 200);">
-TODO
-</p>
+A file format for executable files. The ELF file has roughly the following structure:
+</p>  
+
+1. <p style="color: rgb(80, 130, 200);">Header: contains information on ELF type (object, executable, library)</p>
+2. <p style="color: rgb(80, 130, 200);">Text: machine code to be ran on CPU</p>
+3. <p style="color: rgb(80, 130, 200);">Data: initialized variables from the code ex: int y = 3; (read/write)</p>
+4. <p style="color: rgb(80, 130, 200);">BSS: Uninitliazed variables from the code ex: int y; (read/write)</p>
 
 
 ## Peripherals
