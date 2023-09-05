@@ -75,63 +75,62 @@ A file format for executable files. The ELF file has roughly the following struc
 
 ### Board Support Package (BSP)
 <p style="color: rgb(80, 130, 200);">
-TODO
+A layer of firmware that provides information on the embedded system, allowing a program or OS to run on the given hardware. The BSP may include things like addresses to peripherals. It could also be responsible for intializing things like the CPU Cores or RAM. Being given a BSP means the engineer doesn't have to program those things themself. You may be given one if youre working with FPGAs (as in my experience) or when you purchase a System on Module.
 </p>
 
 ### DMA
 <p style="color: rgb(80, 130, 200);">
-TODO
+Direct memory access. A module that allows the CPU to intiate RAM reads or writes, and perform other tasks while the time consuming memory process is actually done. The CPU would then receive a DMA interrupt from the DMA controller, notifying it when the value has been read or written.
 </p>
 
 ### GPIO
 <p style="color: rgb(80, 130, 200);">
-TODO
+General purpose input/output. Programmable pins of an IC or PCB that can be altered to perform any range of action, dependant on the use case. They can accept signals, output signals, or even do both. The programmer can use these general purpose pins to activate certain periphals, or transmit data.
 </p>
 
 ### Flash Memory
 <p style="color: rgb(80, 130, 200);">
-TODO
-</p>
-
-### RAM
-<p style="color: rgb(80, 130, 200);">
-TODO
+Non-volatile memory. Meaning if the computer is power cycled, the information that has been 'flashed' to the memory device is not lost. Usually used to store software/firmware for a device. The processor can be configured to immediately begin executing code from a flash memory device. There are NAND and NOR type flashes. NOR provides low read latencies while NAND provides higher write latencies.
 </p>
 
 ### EEPROM
 <p style="color: rgb(80, 130, 200);">
-TODO
-</p>
-
-### Clock Speed
-<p style="color: rgb(80, 130, 200);">
-TODO
-</p>
-
-### Watchdog Timer
-<p style="color: rgb(80, 130, 200);">
-TODO
-</p>
-
-### JTAG
-<p style="color: rgb(80, 130, 200);">
-TODO
+Another type of non-volatile memory, except this method uses a different mechanical/electrical method of storage called floating-gate transistors. The EEPROM is write once, and read-only during execution.
 </p>
 
 ### SPI Flash Programming
 <p style="color: rgb(80, 130, 200);">
-TODO
+A type of flash that uses SPI to communicate with the processor. It uses a serial interface (SPI) to send data to the processor such as the machine instructions saved to the flash, when powered on.
 </p>
 
+### RAM
+<p style="color: rgb(80, 130, 200);">
+Random-access memory. RAM is used as a short-term memory of the computer (as compared to flash memory). It is volatile, so when the system is rebooted the contents are lost. RAM is designed such that the latency of reading any memory address is the same, meaning that data can be stored anywhere within it. The information stored within the RAM may be machine code or data. Whenever the CPU needs to process something, it must first be loaded into memory in order to be accessible to the processor.
+</p>
+
+### Caches
+<p style="color: rgb(80, 130, 200);">
+A cache is a type of memory that is closer to the CPU. The typical tradeoff in memory is read/write latency to storage space. Creating faster memory, is more costly, so there are optimal levels of speeds for memory. A CPU may have 3 levels of cache L1, L2 and L3 cache (L1 being the fastest but smallest cache). The CPU will want to cache data so that its execution is not bottlenecked by relatively slow read/write operation to RAM. When reading a value from RAM, the cache will bring that piece of data, and the contents around it, into cache. Now that the data has been loaded, subsequent reads/writes to that data will be quicker (since cache latencies are less than RAM latency). However, there is added complexity due to this, because now the system must maintain multiple copies of data. If the value changes in RAM for whatever reason, the system must know that the value pulled into cache is out of date and refresh it. Likewise, if another process intends to read the most up to date version of some data, the cached modifications need to be written-back to the main memory.
+</p>
+
+### Clock Speed
+<p style="color: rgb(80, 130, 200);">
+Clock speed defines the speed at which a circuit can run. Defined using Hz (usually in MHz or GHz) it decsribes how many times the system clock 'ticks' per second. In essence it is how many instructions can be ran per second (oversimplying, as some instructions may take multiple clock cycles). A CPU may contain its own phase lock loop which it can use to generate its own clock signal to drive its own circuit, and advanced CPUs are able to modify the clock speed depending on the load of the system.
+</p>
+
+### Watchdog Timer
+<p style="color: rgb(80, 130, 200);">
+A watchdog timer is a hardware feature that will will a system reset if the system becomes unreasponsive for a given period of time. For example, a watchdog timer will expire if it has not been 'pet' after 10s. In order to stop the watchdog timer from expiring, the sytsem must toggle the watchdog within 10s of the last toggle. If the system stalls, crashes or encounters a critical error, stopping it from resetting the watchdog, then the watchdog will automatically reset the entire system. The idea is so that an embedded device can self recover in the event of a critical malfunction.
+</p>
+
+### JTAG
+<p style="color: rgb(80, 130, 200);">
+Joint test action group. A debugging port used for testing PCBs or chip implementation. The interface should connect to a TAP (Test action point) on the processor enabling the engineer to test chip level logic operations. The JTAG may also be used to program the firmware and flash the non-volatile memory of the device.
+</p>
 
 ## Processes
 
 ### Bootloader
-<p style="color: rgb(80, 130, 200);">
-TODO
-</p>
-
-### Startup Code
 <p style="color: rgb(80, 130, 200);">
 TODO
 </p>
