@@ -1,9 +1,8 @@
 # Example Technical Questions and Things to Know
 <p style="color: rgb(80, 130, 200);">Answers written in blue</p>
 
-<p style="color: rgb(80, 130, 200);">TODO</p>
-
 ## What is the Volatile keyword in C?
+<p style="color: rgb(80, 130, 200);">TODO</p>
 ### Differences between Const and Volatile?
 
 ## What is an ISR used for?
