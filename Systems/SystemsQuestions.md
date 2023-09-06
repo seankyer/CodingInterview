@@ -73,3 +73,8 @@ Surprisingly, yes. Declaring a variable as const means the source code cannot al
 
 ## What is an ELF file?
 ### What are the seperate sections of an ELF file?
+
+
+## How are decimal numbers represented in the computer?
+### What is fixed point?
+### What is floating point?
