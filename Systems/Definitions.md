@@ -132,10 +132,10 @@ Joint test action group. A debugging port used for testing PCBs or chip implemen
 
 ### Bootloader
 <p style="color: rgb(80, 130, 200);">
-TODO
+The first program that is ran as soon as the system powers on. It is responsible for initializing the hardware of the system as well as loading the operating system or main program into main memory.
 </p>
 
 ### Interupt Service Routine (ISR)
 <p style="color: rgb(80, 130, 200);">
-TODO
+An ISR is a function or routine that runs when an interupt is triggered. Depending on the registered interupt function in a vector table, the processor will stop execution of its current task and context switch over to execute the ISR. It is important that an ISR latency is low, so that while in execution another interupt does not interupt it. 
 </p>
