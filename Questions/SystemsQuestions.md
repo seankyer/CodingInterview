@@ -115,8 +115,19 @@ For the case of little endian, it can speed up memory access and typical use of 
 </p>
 
 ## How are decimal numbers represented in the computer?
+<p style="color: rgb(80, 130, 200);">
+Decimals are typically represented in a computer as a float. Part of the bits would represent the whole part of the number, another set may identify the decimal point, and then the rest of the bits would tell you the fraction or in some cases the variable to apply to a formula to calculate the fraction.
+</p>
+
 ### What is fixed point?
+<p style="color: rgb(80, 130, 200);">
+A fixed point decimal is a data type which's decimal is at a fixed position in the byte sequence. You may have a 32-bit number that is fixed as 32_22, (meaning 22 bits of decimal). You then interpret the subsequenct 22-bits as a 'whole' number if you will, and append it to the first 10-bits, separating with a '.' (decimal) point.
+</p>
+
 ### What is floating point?
+<p style="color: rgb(80, 130, 200);">
+A floating point is much more mutable and the type may be stored as a 32-bit number where the first 8 bits represent the sign, as well as the exponent to apply when calculating the decimal value. This is a critical reason why computer are limited in the accuracy they can output when representing a decimal figure.
+</p>
 
 ## Explain a Mutex
 <p style="color: rgb(80, 130, 200);">
