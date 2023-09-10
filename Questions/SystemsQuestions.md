@@ -105,12 +105,30 @@ A memory leak is when some process or function acquires some memory (maybe throu
 </p>
 
 ## What is endianness?
+<p style="color: rgb(80, 130, 200);">
+Endianness is the byte-order of which variables are stored in memory for a given system. This is defined by the hardware (CPU archiecture) of the system. Little endian means that the first address of the first byte of a memory object will contain the least signficiant bit (LSB) of the object. Big endian is the reverse where things read more chronologically. Network order is big endian when transporting packets.
+</p>
+
 ### What is the point to endianness?
+<p style="color: rgb(80, 130, 200);">
+For the case of little endian, it can speed up memory access and typical use of access data stored in memory. For big endian, it is somtimes important to read the header of an incoming data packet before the rest of the information arrives over the channel.
+</p>
 
 ## How are decimal numbers represented in the computer?
 ### What is fixed point?
 ### What is floating point?
 
 ## Explain a Mutex
+<p style="color: rgb(80, 130, 200);">
+A mutex is a method of ensuring that multi-threaded programs have controlled access to a variable, to eliminate race conditions. In a mutex lock situation, to access or write to a variable, the process must first acquire a mutex lock. If another process has the lock, the second process needs to wait for the other to release the lock. It is usually implemented by having a structure that contains a boolean value that the processes try to acquire. The risk of this approach is that if a process does not ever release the lock, no other processes can continue.
+</p>
+
 ## Explain a Semaphore
+<p style="color: rgb(80, 130, 200);">
+In a semaphore, there may be more than one worker accessing the control structure. In this case, you may implement a counting semaphore. For a sempahore to be incremented, the process does not need to have 'acquired' it. It can be used to dispatch jobs so long as the counter is >0. If the counter reaches 0, then the worker threads would block.
+</p>
+
 ## Explain the differnces between a semaphore and a mutex
+<p style="color: rgb(80, 130, 200);">
+Whereas a mutex is more 'ownership' based, a sempahore is not. A mutex may be considered simpler, but is less flexible as it can basically only be used for a single resource or variable. A semaphore, although more complex, may be considered more flexible since you can declare many resources within a single object.
+</p>
