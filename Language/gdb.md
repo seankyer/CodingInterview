@@ -15,3 +15,5 @@ You must compile using gcc with the `-g` flag so the binary include debug inform
 - `list` - prints code around your current execution point
 - `frame` - prints the current instruction you're on
 - `bt` - prints the current backtrace (callstack)
+- `info locals` - prints all local variables of stack frame
+- `info args` - prints the arguments of the current stack frame
