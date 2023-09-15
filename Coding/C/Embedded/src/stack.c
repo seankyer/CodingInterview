@@ -1,6 +1,6 @@
 /***
  * TODO:
- * Implement a stack using C
+ * Implement a stack using a simply linked list
 */
 #include <stdlib.h>
 #include <stdio.h>

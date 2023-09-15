@@ -1,6 +1,6 @@
 /***
  * TODO:
- * Implement a queue using C
+ * Implement a queue using a simply linked list
 */
 #include <stdlib.h>
 #include <stdio.h>
