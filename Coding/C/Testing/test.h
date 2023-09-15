@@ -3,6 +3,8 @@
 
 void testColours();
 int assertEquals(int x, int y);
+int assertTrue(int x);
+int assertFalse(int x);
 void printTestName(char* name);
 
 #endif

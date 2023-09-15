@@ -32,6 +32,37 @@ int assertEquals(int x, int y) {
     return result;
 }
 
+// Returns 1 if true
+int assertTrue(int x) {
+    if (x) {
+        printf("\033[1;32m");
+        printf("Assertion Pass!\n");
+    } else {
+        printf("\033[1;33m");
+        printf("Assertion Failed: %d == 0\n", x);
+    }
+
+    // Reset printf colour before returning
+    printf("\033[1;0m");
+    return 1;
+}
+
+
+// Returns 1 if true
+int assertFalse(int x) {
+    if (!x) {
+        printf("\033[1;32m");
+        printf("Assertion Pass!\n");
+    } else {
+        printf("\033[1;33m");
+        printf("Assertion Failed: %d != 0\n", x);
+    }
+
+    // Reset printf colour before returning
+    printf("\033[1;0m");
+    return 0;
+}
+
 void printTestName(char* name) {
     printf("\033[1;30m");
     printf("Testing %s\n", name);
