@@ -1,13 +1,13 @@
 # Compiler and flags
 CC := gcc
-CFLAGS := -Wall -Wextra -g -Werror -pedantic -O1 -I../Testing
+CFLAGS := -Wall -Wextra -g -Werror -pedantic -O1 -I../Libraries
 
 # Source files directory and file extension
 SRC_DIR := src
 SRC_EXT := c
 
 # Additional source directory for test.c (two levels up)
-TEST_SRC_DIR := ../Testing
+TEST_SRC_DIR := ../Libraries
 
 # Build directory
 BUILD_DIR := build
@@ -28,7 +28,7 @@ EXECS := $(patsubst $(SRC_DIR)/%.$(SRC_EXT),%.bin,$(filter-out $(TEST_SRC_DIR)/%
 all: $(EXECS)
 
 # Rule to build each executable from its corresponding object file
-$(EXECS): %.bin: $(BUILD_DIR)/%.o $(BUILD_DIR)/test.o
+$(EXECS): %.bin: $(BUILD_DIR)/%.o $(BUILD_DIR)/test.o $(BUILD_DIR)/linkedList.o 
 	$(CC) $(CFLAGS) $^ -o $@
 
 # Rule to compile each source file to an object file
@@ -37,6 +37,10 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
 
 # Rule to compile test.c to an object file
 $(BUILD_DIR)/test.o: $(TEST_SRC_DIR)/test.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Rule to compile test.c to an object file
+$(BUILD_DIR)/linkedList.o: $(TEST_SRC_DIR)/linkedList.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Clean target: remove all executables and object files
